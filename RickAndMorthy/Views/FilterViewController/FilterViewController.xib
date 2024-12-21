@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="FilterViewController" customModule="RickAndMorthy" customModuleProvider="target">
+            <connections>
+                <outlet property="genderSegment" destination="genderControl" id="genderSegmentConnection"/>
+                <outlet property="nameTextField" destination="nameField" id="nameFieldConnection"/>
+                <outlet property="speciesTextField" destination="speciesField" id="speciesFieldConnection"/>
+                <outlet property="statusSegment" destination="statusControl" id="statusSegmentConnection"/>
+                <outlet property="view" destination="iN0-l3-epB" id="viewConnection"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Advanced Search" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="headerLabel">
+                    <rect key="frame" x="16" y="75" width="361" height="24"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="mainStack">
+                    <rect key="frame" x="16" y="119" width="361" height="328"/>
+                    <subviews>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="nameField">
+                            <rect key="frame" x="0.0" y="0.0" width="361" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="statusView">
+                            <rect key="frame" x="0.0" y="54" width="361" height="70"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Status" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="statusLabel">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="19.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="statusControl">
+                                    <rect key="frame" x="0.0" y="27.333333333333339" width="361" height="43.666666666666657"/>
+                                    <segments>
+                                        <segment title="Alive"/>
+                                        <segment title="Dead"/>
+                                        <segment title="Unknown"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="statusControl" secondAttribute="bottom" id="statusControlBottom"/>
+                                <constraint firstItem="statusControl" firstAttribute="leading" secondItem="statusView" secondAttribute="leading" id="statusControlLeading"/>
+                                <constraint firstItem="statusControl" firstAttribute="top" secondItem="statusLabel" secondAttribute="bottom" constant="8" id="statusControlTop"/>
+                                <constraint firstAttribute="trailing" secondItem="statusControl" secondAttribute="trailing" id="statusControlTrailing"/>
+                                <constraint firstItem="statusLabel" firstAttribute="leading" secondItem="statusView" secondAttribute="leading" id="statusLabelLeading"/>
+                                <constraint firstItem="statusLabel" firstAttribute="top" secondItem="statusView" secondAttribute="top" id="statusLabelTop"/>
+                                <constraint firstAttribute="trailing" secondItem="statusLabel" secondAttribute="trailing" id="statusLabelTrailing"/>
+                            </constraints>
+                        </view>
+                        <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Species" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="speciesField">
+                            <rect key="frame" x="0.0" y="144" width="361" height="34"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <textInputTraits key="textInputTraits"/>
+                        </textField>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="genderView">
+                            <rect key="frame" x="0.0" y="198" width="361" height="70"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Gender" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="genderLabel">
+                                    <rect key="frame" x="0.0" y="0.0" width="361" height="19.333333333333332"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="genderControl">
+                                    <rect key="frame" x="0.0" y="27.333333333333311" width="361" height="43.666666666666657"/>
+                                    <segments>
+                                        <segment title="Male"/>
+                                        <segment title="Female"/>
+                                        <segment title="Unknown"/>
+                                    </segments>
+                                </segmentedControl>
+                            </subviews>
+                            <constraints>
+                                <constraint firstAttribute="bottom" secondItem="genderControl" secondAttribute="bottom" id="genderControlBottom"/>
+                                <constraint firstItem="genderControl" firstAttribute="leading" secondItem="genderView" secondAttribute="leading" id="genderControlLeading"/>
+                                <constraint firstItem="genderControl" firstAttribute="top" secondItem="genderLabel" secondAttribute="bottom" constant="8" id="genderControlTop"/>
+                                <constraint firstAttribute="trailing" secondItem="genderControl" secondAttribute="trailing" id="genderControlTrailing"/>
+                                <constraint firstItem="genderLabel" firstAttribute="leading" secondItem="genderView" secondAttribute="leading" id="genderLabelLeading"/>
+                                <constraint firstItem="genderLabel" firstAttribute="top" secondItem="genderView" secondAttribute="top" id="genderLabelTop"/>
+                                <constraint firstAttribute="trailing" secondItem="genderLabel" secondAttribute="trailing" id="genderLabelTrailing"/>
+                            </constraints>
+                        </view>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="buttonStack">
+                            <rect key="frame" x="0.0" y="288" width="361" height="40"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="clearButton">
+                                    <rect key="frame" x="0.0" y="0.0" width="175.66666666666666" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemGrayColor"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="40" id="clearButtonHeight"/>
+                                    </constraints>
+                                    <state key="normal" title="Clear All">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="clearAllButtonTapped:" destination="-1" eventType="touchUpInside" id="T7P-Ia-NzR"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="searchButton">
+                                    <rect key="frame" x="185.66666666666663" y="0.0" width="175.33333333333337" height="40"/>
+                                    <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                    <state key="normal" title="Apply Filters">
+                                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </state>
+                                    <connections>
+                                        <action selector="applyFilters:" destination="-1" eventType="touchUpInside" id="applyAction"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="clearButton" firstAttribute="width" secondItem="searchButton" secondAttribute="width" id="buttonWidthEqual"/>
+                            </constraints>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="headerLabel" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="headerLabelLeading"/>
+                <constraint firstItem="headerLabel" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="16" id="headerLabelTop"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="headerLabel" secondAttribute="trailing" constant="16" id="headerLabelTrailing"/>
+                <constraint firstItem="mainStack" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="16" id="mainStackLeading"/>
+                <constraint firstItem="mainStack" firstAttribute="top" secondItem="headerLabel" secondAttribute="bottom" constant="20" id="mainStackTop"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="mainStack" secondAttribute="trailing" constant="16" id="mainStackTrailing"/>
+            </constraints>
+            <point key="canvasLocation" x="140" y="20"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBlueColor">
+            <color red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="systemGrayColor">
+            <color red="0.5568627451" green="0.5568627451" blue="0.57647058819999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
